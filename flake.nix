@@ -29,6 +29,7 @@
       libGL,
       libdisplay-info,
       libinput,
+      libgbm,
       seatd,
       libxkbcommon,
       mesa,
@@ -72,7 +73,7 @@
 
         nativeBuildInputs = [rustPlatform.bindgenHook pkg-config installShellFiles];
         buildInputs =
-          [libGL libdisplay-info libinput seatd libxkbcommon mesa wayland]
+          [libGL libdisplay-info libinput libgbm seatd libxkbcommon mesa wayland]
           ++ lib.optional withXdgScreenCast dbus
           ++ lib.optional withXdgScreenCast pipewire;
 
